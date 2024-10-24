@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6th Grade Monterey Bay California trip</title>
+    <link rel="stylesheet" href="journey.css">
+</head>
+<body>
+    <h1 id="main-title">6th Grade Monterey Bay California trip</h1>
+    <div class="timeline">
+        <div class="curve-container">
+            <svg width="200" height="100%" preserveAspectRatio="none">
+                <path d="M100,0 C150,100 50,200 100,300 C150,400 50,500 100,600 C150,700 50,800 100,900" stroke="transparent" stroke-width="4" fill="none" />
+                <path d="M100,0 C150,100 50,200 100,300 C150,400 50,500 100,600 C150,700 50,800 100,900" stroke="#3498db" stroke-width="4" fill="none" id="filled-path" />
+            </svg>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <a href="detail/seatac.html" class="timeline-link">
+                    <h2>Sea-Tac</h2>
+                    <p>Our journey started where most journeys in Seattle start, Seattle-Tacoma Airport. Here is where we took a Boeing 737-900 MAX (dont ask me how I know) to San Francisco International Airport, then a bus to our hotel in Monterey Bay, California. On the way we stopped at San Pedro Square Market from lunch, and then finished the drive to the hotel. We settled in to the hotel and then went our separate ways to dinner.</p>
+                </a>
+            </div>
+            <div class="timeline-image">
+                <img src="Images/Sea-tac.jpeg" alt="Sea-Tac Airport">
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-image">
+                <img src="Images/Kayaking.jpg" alt="Kayaking">
+            </div>
+            <div class="timeline-content">
+                <a href="kayaking.html" class="timeline-link">
+                    <h2>Kayaking</h2>
+                    <p>After we dropped of our stuff at the hotel we walked to a kayaking place. On the way we saw Sea Lions on the rocks. We also saw them while kayaking. When I went kayaking, a couple of sea lions chased us becaused we went to close to their territory. After we got back to the hotel and changed, three groups split for dinner</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-content">
+                <a href="mysteryspot.html" class="timeline-link">
+                    <h2>The Mystery spot</h2>
+                    <p>The next day we went, to the Mystery Spot, where things are mysterious. I will not divulge the secrets of it, because its for you to figure it out. However I will show you a picture of a certain Enzo Esterhay, somehow gaining superpowers along with others in the vicinity of the Mystery Spot</p>
+                </a>
+            </div>
+            <div class="timeline-image">
+                <img src="Images/MysterySpot.jpg" alt="Mystery Spot">
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <a href="pacificgrove.html" class="timeline-link">
+                    <h2>Pacific Grove Natural History Museum</h2>
+                    <p>On that Same day we went to the Pacific Grove Natural History Museum. There we saw history of Monterey Such as a model of the chinese fishing village, animals there and a collection of sand from beaches all over the world. We also saw a Mr H. reveal his telekinesis powers as seen in the picture. (<i>Picture Taken by Arjun Kay</i>).</p>
+                </a>
+            </div>
+            <div class="timeline-image">
+                <img src="Images/NaturalHistory1.jpg" alt="Natural History Museum">
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">↓</div>
+    <script>
+        const filledPath = document.getElementById('filled-path');
+        const pathLength = filledPath.getTotalLength();
+        
+        filledPath.style.strokeDasharray = pathLength;
+        filledPath.style.strokeDashoffset = pathLength;
+
+        window.addEventListener('scroll', () => {
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight));
+            const drawLength = pathLength * scrollPercentage;
+            filledPath.style.strokeDashoffset = pathLength - drawLength;
+        });
+    </script>
+</body>
+</html>
